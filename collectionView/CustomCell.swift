@@ -10,6 +10,7 @@ import UIKit
 
 class CustomCell: UICollectionViewCell {
 
+    //色のラベル
     @IBOutlet weak var colorLabel: UILabel!
     
     override func awakeFromNib() {
