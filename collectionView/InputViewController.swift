@@ -49,16 +49,16 @@ class InputViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         switch dataList[row] {
         case "赤":
             //inputViewController.initColor = 0
-            mainVC.segueCell?.backgroundColor = .systemRed
-            self.view.backgroundColor = .systemRed
+            mainVC.segueCell?.backgroundColor = .red
+            self.view.backgroundColor = .red
             
         case "緑":
-            mainVC.segueCell?.backgroundColor = .systemGreen
-            self.view.backgroundColor = .systemGreen
+            mainVC.segueCell?.backgroundColor = .green
+            self.view.backgroundColor = .green
             
         case "青":
-            mainVC.segueCell?.backgroundColor = .systemBlue
-            self.view.backgroundColor = .systemBlue
+            mainVC.segueCell?.backgroundColor = .blue
+            self.view.backgroundColor = .blue
             
         default: break
         }

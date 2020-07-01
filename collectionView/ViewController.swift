@@ -13,6 +13,7 @@ class ViewController: UIViewController,UICollectionViewDataSource, UICollectionV
     @IBOutlet weak var collectionView: UICollectionView!
     
     var colorArray = [String]()
+    var colorIndex = Int()
     
     var segueCell : UICollectionViewCell?
     
@@ -36,13 +37,13 @@ class ViewController: UIViewController,UICollectionViewDataSource, UICollectionV
         
         switch cell.colorLabel.text {
             case "赤":
-                cell.backgroundColor = .systemRed
+                cell.backgroundColor = .red
                 
             case "緑":
-                cell.backgroundColor = .systemGreen
+                cell.backgroundColor = .green
                 
             case "青":
-                cell.backgroundColor = .systemBlue
+                cell.backgroundColor = .blue
                 
             default: break
             
@@ -53,6 +54,8 @@ class ViewController: UIViewController,UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("\(indexPath.row)番目の行が選択されました")
+        
+        colorIndex = indexPath.row
         
         self.collectionView.deselectItem(at: indexPath, animated: true)
         
@@ -72,14 +75,14 @@ class ViewController: UIViewController,UICollectionViewDataSource, UICollectionV
             inputViewController.view.backgroundColor = self.segueCell?.backgroundColor
             
             switch inputViewController.view.backgroundColor {
-            case UIColor.systemRed:
+            case UIColor.red:
                 //inputViewController.initColor = 0
                 inputViewController.pickerView.selectRow(0, inComponent: 0, animated: true)
                 
-            case UIColor.systemGreen:
+            case UIColor.green:
                 inputViewController.pickerView.selectRow(1, inComponent: 0, animated: true)
                 
-            case UIColor.systemBlue:
+            case UIColor.blue:
                 inputViewController.pickerView.selectRow(2, inComponent: 0, animated: true)
                 
             default: break
@@ -92,17 +95,17 @@ class ViewController: UIViewController,UICollectionViewDataSource, UICollectionV
     @IBAction func backToMain(segue: UIStoryboardSegue){
         print("戻ってきました")
         
-        colorArray[3] = "黒"
+        
         
         switch self.segueCell?.backgroundColor {
-            case UIColor.systemRed:
-                print("A")
+            case UIColor.red:
+                colorArray[self.colorIndex] = "赤"
                 
-            case UIColor.systemGreen:
-                print("B")
+            case UIColor.green:
+                colorArray[self.colorIndex] = "緑"
                 
-            case UIColor.systemBlue:
-                print("C")
+            case UIColor.blue:
+                colorArray[self.colorIndex] = "青"
                 
             default: break
             

@@ -27,12 +27,13 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="day-iK-fJc" customClass="CustomCell" customModule="collectionView" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="H2u-AO-LUB">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="25" height="25"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -58,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="120"/>
+            <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
         </scene>
         <!--Input View Controller-->
         <scene sceneID="EmO-3D-Iov">
@@ -68,23 +69,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omq-eN-2o6">
-                                <rect key="frame" x="192" y="406" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omq-eN-2o6">
+                                <rect key="frame" x="192" y="412" width="30" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="82X-Ik-Vcs"/>
+                                </constraints>
                                 <state key="normal" title="OK"/>
                                 <connections>
                                     <action selector="okBack:" destination="Gg7-Ov-mKM" eventType="touchUpInside" id="RL8-vw-CxQ"/>
                                     <segue destination="8cB-Io-a40" kind="unwind" unwindAction="backToMainWithSegue:" id="MuU-FM-Xea"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1D-Fo-h9n">
-                                <rect key="frame" x="0.0" y="97" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1D-Fo-h9n">
+                                <rect key="frame" x="0.0" y="200" width="414" height="162"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="HJ5-vw-hoV"/>
+                                    <constraint firstAttribute="width" constant="414" id="K2w-uL-jbN"/>
+                                </constraints>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="omq-eN-2o6" firstAttribute="centerX" secondItem="a1D-Fo-h9n" secondAttribute="centerX" id="Co3-GZ-RdO"/>
+                            <constraint firstItem="a1D-Fo-h9n" firstAttribute="top" secondItem="2eg-3O-GbK" secondAttribute="top" constant="200" id="San-uX-c1E"/>
+                            <constraint firstItem="omq-eN-2o6" firstAttribute="centerX" secondItem="jvT-hG-Erm" secondAttribute="centerX" id="VdB-wZ-gwn"/>
+                            <constraint firstItem="omq-eN-2o6" firstAttribute="top" secondItem="a1D-Fo-h9n" secondAttribute="bottom" constant="50" id="gCg-ch-xqD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2eg-3O-GbK"/>
                     </view>
                     <navigationItem key="navigationItem" id="o10-7U-q5t"/>
